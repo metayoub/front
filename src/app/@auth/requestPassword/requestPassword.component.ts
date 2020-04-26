@@ -45,7 +45,7 @@ export class NgxRPComponent implements OnInit{
     this.authService.login(this.user.email, this.user.password)
       .subscribe(
         () => {
-          this.router.navigate([this.returnUrl])
+          // this.router.navigate([this.returnUrl])
         },
         error => {
           this.submitted = false;
