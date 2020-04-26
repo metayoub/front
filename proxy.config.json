@@ -1,0 +1,7 @@
+{
+    "/authentification/*":{
+        "target": "http://173.212.227.225:8080/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
