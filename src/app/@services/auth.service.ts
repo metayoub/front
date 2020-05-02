@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import * as jwt_decode from 'jwt-decode';
 
 import { User } from '../@auth/model/user';
 
@@ -27,5 +28,18 @@ export class AuthService {
 
     logout(){
         localStorage.removeItem('currentUser');
+    }
+
+    getTokenExpirationDate(token: string): number {
+        const decoded = jwt_decode(token);
+        if (decoded.exp === undefined) return null;
+        return decoded.exp;
+      }
+      
+    isTokenExpired(token?: string): boolean {
+        if(!token) return true;
+        const exp = this.getTokenExpirationDate(token);
+        if(exp === undefined) return false;
+        return !(exp > new Date().getTime());
     }
 }

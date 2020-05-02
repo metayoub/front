@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
         // Il faut bien vérifier le token 
         const currentUser = this.authService.currentUserValue;
         if(currentUser && currentUser.token) {
-            return true;
+            if (!this.authService.isTokenExpired(currentUser.token)) return true;
         }
         this.router.navigate(['/auth'], {
             queryParams : {
@@ -23,4 +23,5 @@ export class AuthGuard implements CanActivate {
         });
         return false;
     }
+
 }
