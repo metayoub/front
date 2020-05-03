@@ -1,7 +1,4 @@
 import { NgModule } from '@angular/core';
-import {
-  NbCardModule,
-} from '@nebular/theme';
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ThemeModule } from '../../@theme/theme.module';
@@ -9,18 +6,40 @@ import { FormsModule } from '@angular/forms';
 
 import { AdministrationComponent } from './administration.component';
 import { AdministrationListComponent } from './list/list.component';
+import { AddUserComponent } from './add/add.component';
 import { AdministrationRoutingModule } from './administration-routing.module';
+import {
+  NbActionsModule,
+  NbButtonModule,
+  NbCardModule,
+  NbCheckboxModule,
+  NbDatepickerModule, NbIconModule,
+  NbInputModule,
+  NbRadioModule,
+  NbSelectModule,
+  NbUserModule,
+} from '@nebular/theme';
+
 @NgModule({
   imports: [
     AdministrationRoutingModule,
     FormsModule,
     ThemeModule,
+    NbActionsModule,
+    NbButtonModule,
     NbCardModule,
+    NbCheckboxModule,
+    NbDatepickerModule, NbIconModule,
+    NbInputModule,
+    NbRadioModule,
+    NbSelectModule,
+    NbUserModule,
     Ng2SmartTableModule,
   ],
   declarations: [
     AdministrationComponent,
     AdministrationListComponent,
+    AddUserComponent,
   ],
 })
 export class AdministrationModule {}

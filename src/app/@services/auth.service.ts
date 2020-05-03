@@ -38,7 +38,7 @@ export class AuthService {
       
     isTokenExpired(token?: string): boolean {
         if(!token) return true;
-        const exp = this.getTokenExpirationDate(token);
+        const exp = this.getTokenExpirationDate(token)*1000;
         if(exp === undefined) return false;
         return !(exp > new Date().getTime());
     }
