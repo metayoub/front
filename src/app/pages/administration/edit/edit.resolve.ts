@@ -4,13 +4,13 @@ import { AdministrationService } from '../../../@services/administration.service
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class ListUserResolver implements Resolve<any> {
+export class EditUserResolver implements Resolve<any> {
   constructor(private administrationService: AdministrationService) {}
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any>|Promise<any>|any {
-    return this.administrationService.userList()
+    return this.administrationService.user(route.params.id)
   }
 }

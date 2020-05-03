@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import { AdministrationComponent } from './administration.component';
 import { AdministrationListComponent } from './list/list.component';
 import { AddUserComponent } from './add/add.component';
-import { ListResolver } from './list/list.resolve';
+import { EditUserComponent } from './edit/edit.component';
+import { ListUserResolver } from './list/list.resolve';
+import { EditUserResolver } from './edit/edit.resolve';
+
 const routes: Routes = [{
   path: '',
   component: AdministrationComponent,
@@ -12,12 +15,15 @@ const routes: Routes = [{
       path: 'list',
       component: AdministrationListComponent,
       resolve : {
-        users : ListResolver
+        users : ListUserResolver
       }
     },
     {
-      path: 'update',
-      /*component: ProfilComponent,*/
+      path: 'edit/:id',
+      component: EditUserComponent,
+      resolve : {
+        user : EditUserResolver
+      }
     },
     {
       path: 'add',
@@ -28,10 +34,10 @@ const routes: Routes = [{
       redirectTo: 'list',
       pathMatch: 'full',
     },
-    /*{
+    {
       path: '**',
-      component: NotFoundComponent,
-    },*/
+      redirectTo: 'list',
+    },
   ],
 }];
 
