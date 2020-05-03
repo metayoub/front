@@ -10,4 +10,8 @@ export class AdministrationService {
         return this.http.get('/authentification/api/user/all')
     }
 
+    userCreate(user: Object) {
+        return this.http.post('/authentification/api/user/all', user)
+    }
+
 }

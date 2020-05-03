@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { AdministrationComponent } from './administration.component';
 import { AdministrationListComponent } from './list/list.component';
+import { AddUserComponent } from './add/add.component';
 import { ListResolver } from './list/list.resolve';
 const routes: Routes = [{
   path: '',
@@ -20,7 +21,7 @@ const routes: Routes = [{
     },
     {
       path: 'add',
-      // component: DashboardComponent,
+      component: AddUserComponent,
     },
     {
       path: '',

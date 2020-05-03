@@ -1,0 +1,129 @@
+<nb-card>
+    <nb-card-header>Add user:</nb-card-header>
+    <nb-card-body>
+        <form (ngSubmit)="submit()" #form="ngForm" aria-labelledby="title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputFirstName" class="label">firstName</label>
+                        <input type="text"
+                            nbInput 
+                            fullWidth 
+                            id="inputFirstName" 
+                            #firstName="ngModel"
+                            name="firstName"
+                            [(ngModel)]="user.firstName"
+                            [required]="forms.validation.firstName.required"
+                            [disabled]="forms.validation.firstName.disable">
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputLastName" class="label">lastName</label>
+                        <input type="text" nbInput
+                            fullWidth 
+                            id="inputLastName" 
+                            #lastName="ngModel"
+                            name="lastName"
+                            [(ngModel)]="user.lastName"
+                            [required]="forms.validation.lastName.required"
+                            [disabled]="forms.validation.lastName.disable">
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="inputUsername" class="label">Username</label>
+                    <input type="text"
+                        nbInput 
+                        fullWidth 
+                        id="inputUsername" 
+                        #username="ngModel"
+                        name="username"
+                        [(ngModel)]="user.username"
+                        [required]="forms.validation.username.required"
+                        [disabled]="forms.validation.username.disable">
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="inputStore" class="label">Store</label>
+                    <input type="text" nbInput
+                        fullWidth 
+                        id="inputStore" 
+                        #store="ngModel"
+                        name="store"
+                        [(ngModel)]="user.store"
+                        [required]="forms.validation.store.required" 
+                        [disabled]="forms.validation.store.disable">
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="inputEmail" class="label">Email</label>
+                    <input nbInput
+                        fullWidth
+                        [(ngModel)]="user.email"
+                        #email="ngModel"
+                        name="email"
+                        id="inputEmail"
+                        pattern=".+@.+\..+"
+                        placeholder="Email address"
+                        autofocus
+                        [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : 'basic'"
+                        [required]="forms.validation.email.required"
+                        [attr.aria-invalid]="email.invalid && email.touched ? true : null"
+                        [disabled]="forms.validation.email.disable">
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="inputAdress" class="label">adress</label>
+                    <input type="text" nbInput
+                        fullWidth 
+                        id="inputAdress" 
+                        #adress="ngModel"
+                        name="adress"
+                        [(ngModel)]="user.adress"
+                        [required]="forms.validation.adress.required"
+                        [disabled]="forms.validation.adress.disable">
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="inputPhoneNumber" class="label">phoneNumber</label>
+                    <input nbInput
+                        fullWidth
+                        [(ngModel)]="user.phoneNumber"
+                        #phoneNumber="ngModel"
+                        name="phoneNumber"
+                        id="inputphoneNumber"
+                        pattern="0[1-9]{1}[0-9]{8}"
+                        autofocus
+                        [status]="phoneNumber.dirty ? (phoneNumber.invalid  ? 'danger' : 'success') : 'basic'"
+                        [required]="forms.validation.phoneNumber.required"
+                        [attr.aria-invalid]="phoneNumber.invalid && phoneNumber.touched ? true : null"
+                        [disabled]="forms.validation.phoneNumber.disable">
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="inputAdresse" class="label">gender</label>
+                </div>
+                </div>
+            </div>
+            <button nbButton
+                    fullWidth
+                    status="primary"
+                    [disabled]="submitted || !form.valid"
+                    [class.btn-pulse]="submitted">
+                    Submit
+            </button>
+        </form>
+    </nb-card-body>
+</nb-card>
