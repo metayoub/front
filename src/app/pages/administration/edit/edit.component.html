@@ -1,5 +1,5 @@
 <nb-card>
-    <nb-card-header>Add user:</nb-card-header>
+    <nb-card-header>Edit user:</nb-card-header>
     <nb-card-body>
         <form (ngSubmit)="submit()" #form="ngForm" aria-labelledby="title">
             <div class="row">
@@ -117,14 +117,27 @@
                 </div>
                 </div>
             </div>
-            <button nbButton
-                    fullWidth
-                    status="primary"
-                    outline
-                    [disabled]="submitted || !form.valid"
-                    [class.btn-pulse]="submitted">
-                    Submit
-            </button>
+            <div class="row">
+                <div class="col-sm-6">
+                    <button nbButton
+                        fullWidth
+                        outline 
+                        status="primary"
+                        [disabled]="submitted || !form.valid"
+                        [class.btn-pulse]="submitted">
+                        Submit
+                    </button>
+                </div>
+                <div class="col-sm-6">
+                    <button nbButton
+                        fullWidth
+                        outline 
+                        status="warning"
+                        [routerLink]="['/home/administation/list/']">
+                        Cancel
+                    </button>
+                </div>
+            </div>
         </form>
     </nb-card-body>
 </nb-card>

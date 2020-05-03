@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LocalDataSource } from 'ng2-smart-table';
 
 @Component({
@@ -46,10 +46,15 @@ export class AdministrationListComponent implements OnInit{
         },
       };
 
-    constructor(private route: ActivatedRoute){}
+    constructor(private route: ActivatedRoute,
+      private router: Router,){}
 
     ngOnInit (){
         this.route.data.subscribe(data => this.users = data.users);
         this.source.load(this.users);
+    }
+
+    onUserRowSelect(e) {
+      this.router.navigate(['home/administation/edit/', e.username]);
     }
 }

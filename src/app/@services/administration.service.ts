@@ -14,4 +14,7 @@ export class AdministrationService {
         return this.http.post('/authentification/api/user/all', user)
     }
 
+    user(id: string) {
+        return this.http.get('/authentification/api/user/userByName/'+id)
+    }
 }
