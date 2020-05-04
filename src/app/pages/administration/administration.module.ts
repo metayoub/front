@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AdministrationComponent } from './administration.component';
 import { AdministrationListComponent } from './list/list.component';
+import { AdministrationRoleComponent } from './role/role.component';
 import { AddUserComponent } from './add/add.component';
 import { EditUserComponent } from './edit/edit.component';
 import { AdministrationRoutingModule } from './administration-routing.module';
@@ -40,6 +41,7 @@ import {
   declarations: [
     AdministrationComponent,
     AdministrationListComponent,
+    AdministrationRoleComponent,
     AddUserComponent,
     EditUserComponent,
   ],

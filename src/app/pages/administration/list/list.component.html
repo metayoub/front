@@ -8,12 +8,21 @@
                     fullWidth
                     status="primary"
                     outline
-                    [routerLink]="['/home/administation/list/']">
+                    [routerLink]="['/home/administation/add/']">
                     Add User
-            </button>
+              </button>
             </div>
-            <div class="col-sm-9">
-
+            <div class="col-sm-3">
+              <button nbButton
+                    fullWidth
+                    status="primary"
+                    outline
+                    [routerLink]="['/home/administation/role/']">
+                    Role
+              </button>
+            </div>
+            <div class="col-sm-6">
+              search ....
             </div>
           </div>
             <ng2-smart-table [settings]="settings" [source]="source" (userRowSelect)="onUserRowSelect($event.data)">
