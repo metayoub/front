@@ -17,4 +17,8 @@ export class AdministrationService {
     user(id: string) {
         return this.http.get('/authentification/api/user/userByName/'+id)
     }
+
+    roleList() {
+        return this.http.get('/authentification/api/role/all')
+    }
 }

@@ -6,6 +6,8 @@ import { AddUserComponent } from './add/add.component';
 import { EditUserComponent } from './edit/edit.component';
 import { ListUserResolver } from './list/list.resolve';
 import { EditUserResolver } from './edit/edit.resolve';
+import { ListRoleResolver } from './role/role.resolve';
+import { AdministrationRoleComponent } from './role/role.component';
 
 const routes: Routes = [{
   path: '',
@@ -28,6 +30,13 @@ const routes: Routes = [{
     {
       path: 'add',
       component: AddUserComponent,
+    },
+    {
+      path: 'role',
+      component: AdministrationRoleComponent,
+      resolve : {
+        roles : ListRoleResolver
+      }
     },
     {
       path: '',
